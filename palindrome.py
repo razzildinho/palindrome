@@ -3,6 +3,13 @@ import csv
 def baseN(num,b):
     # From the discussion here: https://cs.stackexchange.com/questions/10318/the-math-behind-converting-from-any-base-to-any-base-without-going-through-base
     # This will convert from decimal integer to any base
+
+    # Base needs to be at least 2 and args need to be integers
+    if not isinstance(num, int):
+        raise Exception('Invalid integer')
+    if not isinstance(b, int) or b < 2:
+        raise Exception('Invalid base')
+
     digits = []
     while num > 0:
         digits.insert(0, num % b)
@@ -10,7 +17,9 @@ def baseN(num,b):
     return digits
 
 def isPalindrome(s):
-    # Check if an array is a reverse of itself
+    # Check if an array or string is a reverse of itself
+    if not isinstance(s, list):
+        raise Exception('Invalid argument')
     return s == s[::-1]
 
 def output():
