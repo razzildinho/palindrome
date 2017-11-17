@@ -17,7 +17,7 @@ def baseN(num,b):
     return digits
 
 def isPalindrome(s):
-    # Check if an array or string is a reverse of itself
+    # Check if an array is a reverse of itself
     if not isinstance(s, list):
         raise Exception('Invalid argument')
     return s == s[::-1]
